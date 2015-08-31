@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= @page_title || "Andrew's Page" %></title>
+		<!-- 修改標籤上的字眼 -->
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+
+
+
+	<body ng-app="validationApp" ng-controller="mainController">
+		<%= render "welcome/navbar" %>
+		<!-- Adding Authentication with Devise -->
+		<% if notice %>
+		<p class="alert alert-success"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+		<p class="alert alert-danger"><%= alert %></p>
+		<% end %>
+		
+		<!-- Ｆlash的功能 -->
+		<p style="color: green"><%= flash[:notice] %></p>
+		<p style="color: red"><%= flash[:alert] %></p>
+		<% flash.each do |message_type, message| %>
+		<div class="col-md-offset-1 col-md-10 alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
+		<%= yield %>
+		<!-- 要在yield之後才會置底 -->
+		<%= render "welcome/footer" %>
+	</body>
+</html>
