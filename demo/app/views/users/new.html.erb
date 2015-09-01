@@ -1,0 +1,38 @@
+<% provide(:title, 'Sign up') %>
+<div class = "col-sm-12 text-center"><h1>Sign Up</h1></div>
+<div class="row" >
+	<div class="col-md-6 col-md-offset-3">
+		<!-- pass in the variable if our form is valid or invalid -->
+		<!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+		<%= form_for(@user, :html => { novalidate: '', name: 'userForm'}) do |f| %>
+		<%= render 'shared/error_messages' %>
+		<!-- <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>-->
+		<label>Name</label>
+		<%= f.text_field :name, :class=>'form-control', :placeholder=>"" %>
+		<!-- 		, :'ng-model'=>"name", :name => "name", :'ng-minlength' => "3", :'ng-maxlength' => "8",:required => true
+		<span ng-show="userForm.name.$error.minlength || userForm.name.$error.maxlength" class="help-block"> 使用者名稱介於 3 - 8 個字唷</span> -->
+		<!-- 			<span ng-show="userForm.name.$error.maxlength" class="help-block">使用者名稱要少於8個字唷</span>
+		<span ng-show="userForm.name.$error.required && userForm.name.$touched" class="help-block">{{ message }}</span> -->
+		<label>Email</label>
+		<%= f.email_field :email, :class => 'form-control' %>
+		<!-- ,:'ng-model'=>"email", :name => "email",:required => true  -->
+		<!-- 		<div ng-show="userForm.$submitted || userForm.email.$touched" class="help-block">
+				<span ng-show="userForm.email.$error.required">告訴我們你的信箱吧！</span>
+				<span ng-show="userForm.email.$error.email">Ooops, 信箱格式不對唷！</span>
+		</div> -->
+		<label>Password</label>
+		<%= f.password_field :password, :class=>'form-control'%>
+		<!-- ,:'ng-model'=>"user_password", :name => "user_password",:'validastor'=>"required_field,length_8" -->
+		<!-- 		<span ng-show="userForm.user_password.$touched" class="help-block"> pass</span>
+		-->
+		
+		<label>Confirm Password</label>
+		<%= f.password_field :password_confirmation, :class=>'form-control'%>
+		<!-- ,:'ng-model'=>"user_password_confirmation", :name => "user_password_confirmation" -->
+		<!--  		<span ng-show="userForm.user_password.$valid !== userForm.user_password_confirmation.$valid" class="help-block"> Ooops,  密碼不一致唷！</span> -->
+		<%= f.submit "Create Account", :class => "btn btn-primary form-control" %>
+		
+		<!-- , :'ng-show' => "userForm.name.$valid && userForm.email.$valid" -->
+	</div>
+	<% end %>
+</div>
