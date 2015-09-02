@@ -62,7 +62,8 @@ Rails.application.routes.draw do
   get "welcome/aboutme" => "welcome#about"
 
 
-  resources :users  
+  resources :users
+  resources :microposts,          only: [:create, :destroy]  
 
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'

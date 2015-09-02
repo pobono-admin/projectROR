@@ -1,6 +1,21 @@
+<section class="col-sm-12 page_title">
+	<h1 class="text-center">Profile</h1>
+</section>
+
 <% provide(:title, @user.name) %>
 <h1>
   <%= @user.name %>
   <%= @user.email %>
+
+
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 
 </h1>
