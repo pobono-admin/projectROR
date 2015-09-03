@@ -27,6 +27,10 @@ group :production do
 end
 
 
+# 假用戶
+gem 'faker',                '1.4.2'
+
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

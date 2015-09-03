@@ -1,3 +1,11 @@
-
-<div>LOG IN</div>
-
+<% provide(:title, 'All users') %>
+<section class="col-sm-12 page_title">
+	<h1 class="text-center">All Users</h1>
+</section>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
