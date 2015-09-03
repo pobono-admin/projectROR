@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
 	validates :name, 
           :presence => {:message => "can't be blank" },
-          :length => { :maximum => 10, :message => "should less then 10 words"}
+          :length => { :maximum => 20, :message => "should less then 20 words"}
 
 	validates :email, 
           :presence => {:message => "format is invalid" }

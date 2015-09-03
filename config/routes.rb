@@ -63,7 +63,7 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :microposts,          only: [:create, :destroy]  
+  # resources :microposts,          only: [:create, :destroy]  
 
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
