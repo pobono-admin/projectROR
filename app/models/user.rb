@@ -1,5 +1,10 @@
 class User < ActiveRecord::Base
 	
+	attr_accessor :remember_token, :activation_token
+	before_create :create_activation_digest
+
+
+
 	has_many :microposts, dependent: :destroy
 	has_secure_password
 
@@ -17,5 +22,29 @@ class User < ActiveRecord::Base
 
 	# validates :password_confirmation, 
  #          :presence => {:message => "密碼不一致" }
+
+
+  # Returns the hash digest of the given string.
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+
+
+	def User.new_token
+	    SecureRandom.urlsafe_base64
+	end
+
+ private
+
+
+
+    # Creates and assigns the activation token and digest.
+    def create_activation_digest
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest(activation_token)
+    end
+
 
 end
