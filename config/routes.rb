@@ -57,13 +57,12 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :account_activations, only: [:edit]
-  resources :users
+
 
   get "welcome" => "welcome#index"
   get "welcome/say_hello" => "welcome#say"
   get "welcome/aboutme" => "welcome#about"
-  
+
   # resources :microposts,          only: [:create, :destroy]  
 
   get 'help'    => 'static_pages#help'
@@ -77,5 +76,8 @@ Rails.application.routes.draw do
 
   root :to => "welcome#index"
 
-  
+  resources :account_activations, only: [:edit]
+  resources :users
+
+    
 end
