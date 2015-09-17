@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	
 	attr_accessor :remember_token, :activation_token
 	before_create :create_activation_digest
-
+	before_save   :downcase_email
 
 
 	has_many :microposts, dependent: :destroy
@@ -16,15 +16,14 @@ class User < ActiveRecord::Base
           :presence => {:message => "format is invalid" }
 
 
-	 # validates :password, 
-  #          :presence => {:message => "不可以空白" }
+  # Returns true if the given token matches the digest.
+  def authenticated?(attribute, token)
+    digest = send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
+  end
 
 
-	# validates :password_confirmation, 
- #          :presence => {:message => "密碼不一致" }
-
-
-  # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
@@ -32,9 +31,15 @@ class User < ActiveRecord::Base
   end
 
 
-	def User.new_token
-	    SecureRandom.urlsafe_base64
-	end
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+    # Returns a random token.
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
 
 
   # Activates an account.
@@ -51,6 +56,10 @@ class User < ActiveRecord::Base
 
  private
 
+    # Converts email to all lower-case.
+    def downcase_email
+      self.email = email.downcase
+    end
 
 
     # Creates and assigns the activation token and digest.

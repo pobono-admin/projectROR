@@ -1,5 +1,6 @@
  class UserMailer < ApplicationMailer
 
+  default from: 'pobono.liren@gmail.com'
 
   def account_activation(user)
     @user = user

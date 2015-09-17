@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
   default from: "pobono.liren@gmail.com"
-  layout 'mailer'
+  layout 'account_activation'
 end

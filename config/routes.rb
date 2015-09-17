@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # get 'sessions/new'
   # get 'users/new'
 
@@ -57,8 +58,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  resources :users
+  resources :account_activations, only: [:edit]
 
-
+  root :to      => "welcome#index"
   get "welcome" => "welcome#index"
   get "welcome/say_hello" => "welcome#say"
   get "welcome/aboutme" => "welcome#about"
@@ -74,10 +77,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  root :to => "welcome#index"
 
-  resources :account_activations, only: [:edit]
-  resources :users
+# get 'account_activation', "account_activations#edit", :as => :edit_account_activation
 
     
 end
