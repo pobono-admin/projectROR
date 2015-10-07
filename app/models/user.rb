@@ -73,6 +73,14 @@ class User < ActiveRecord::Base
    end 
 
 
+    # Defines a proto-feed.
+    # See "Following users" for the full implementation.
+    def feed
+      microposts
+    end
+
+
+
  private
 
     # Converts email to all lower-case.

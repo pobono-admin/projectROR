@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
+# uploaded image and associate it with the Micropost model
+gem 'carrierwave',             '0.10.0'
+
+# includes the mini_magick and fog gems needed for image resizing and image upload in production
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.26.0'
+
+
 
 gem 'bootstrap-sass'
 gem 'devise'
