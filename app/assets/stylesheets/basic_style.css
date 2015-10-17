@@ -1,7 +1,6 @@
 .footer_style{
 	background-color: #4F5E7F;
-	position: static;
-	margin-top: 500px;
+	position: absolute;
 	bottom: 0px;
 	height: 40px;
 }
@@ -9,6 +8,7 @@
 
 .footer_style p {
 	color: #fff;
+	margin-bottom: 0;
 }
 
 .header_style{

@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
 
-  before_action :logged_in_user, only: [:create, :destroy]
+    before_action :logged_in_user, only: [:create, :destroy]
     before_action :correct_user,   only: :destroy
 
 
@@ -9,7 +9,10 @@ class MicropostsController < ApplicationController
     if @micropost.save
       redirect_to current_user
     else
-      render 'static_pages/home'
+      # @feed_items = current_user.feed.paginate(page: params[:page])
+      # render 'static_pages/home'
+      redirect_to current_user
+
     end
   end
 

@@ -68,12 +68,11 @@ Rails.application.routes.draw do
   get "welcome" => "welcome#index"
   get "welcome/say_hello" => "welcome#say"
   get "welcome/aboutme" => "welcome#about"
-
+  get "microposts" => "users#micropost_form"
   # resources :microposts,          only: [:create, :destroy]  
-
-  get 'help'    => 'static_pages#help'
-  get 'about'   => 'static_pages#about'
-  get 'contact' => 'static_pages#contact'
+  # get 'help'    => 'static_pages#help'
+  # get 'about'   => 'static_pages#about'
+  # get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
 
   get    'login'   => 'sessions#new'
