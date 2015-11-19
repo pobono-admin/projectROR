@@ -63,11 +63,11 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
 
-
+  # Named route
   root :to      => "static_pages#home"
   get "welcome" => "welcome#index"
   get "welcome/say_hello" => "welcome#say"
-  get "welcome/aboutme" => "welcome#about"
+  get "about_Andrew" => "welcome#about"
   get "microposts" => "users#micropost_form"
   # resources :microposts,          only: [:create, :destroy]  
   # get 'help'    => 'static_pages#help'

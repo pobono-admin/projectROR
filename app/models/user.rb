@@ -5,16 +5,34 @@ class User < ActiveRecord::Base
 	before_save   :downcase_email
 
 
-	has_many :microposts, dependent: :destroy
+  has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name:  "Relationship",
+                                  foreign_key: "follower_id",
+                                  dependent:   :destroy
+  has_many :passive_relationships, class_name:  "Relationship",
+                                   foreign_key: "followed_id",
+                                   dependent:   :destroy
+                                   
+  has_many :following, through: :active_relationships,  source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower                                                                     
+
+  # A hash password
 	has_secure_password
 
+  # 驗證機制 -----------------------
 	validates :name, 
           :presence => {:message => "can't be blank" },
           :length => { :maximum => 20, :message => "should less then 20 words"}
 
+
 	validates :email, 
           :presence => {:message => "format is invalid" }
+          # :uniqueness => { case_sensitive: false }
 
+
+  # validates :password, presence: true, length: { minimum: 6 }
+
+  # ----------------------------------------------
 
   # Returns true if the given token matches the digest.
   def authenticated?(attribute, token)
