@@ -1,13 +1,21 @@
 <section class="col-sm-12 page_title">
 	<h1 class="text-center">Profile</h1>
 </section>
+<section class="stats">
+  <%= render 'shared/stats' %>
+</section>
+
+
+  <div class="col-sm-12">
+    <%= render 'follow_form' if logged_in? %>
+  </div>
 
   <% if current_user %>
     <section class="micropost_form">
       <%= render 'shared/micropost_form' %>
     </section>
   <% end %>
-  
+
 
 <!-- 
   <% if logged_in? %>
