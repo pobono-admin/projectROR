@@ -1,0 +1,26 @@
+<section class="col-sm-12 page_title">
+  <h1 class="text-center">Following/Follower</h1>
+</section>
+
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    <% if @users.try(:any?) %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.try(:any?) %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+    <% end %>
+  </div>
+</div>
