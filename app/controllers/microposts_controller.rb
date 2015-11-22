@@ -8,8 +8,7 @@ class MicropostsController < ApplicationController
     if @micropost.save
       redirect_to current_user
     else
-      # @feed_items = current_user.feed.paginate(page: params[:page])
-      # render 'static_pages/home'
+      @feed_items = []
       redirect_to current_user
 
     end

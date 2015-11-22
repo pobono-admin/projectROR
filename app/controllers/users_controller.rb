@@ -32,6 +32,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts
+    @feed_items = current_user.feed
+
     # .paginate(page: params[:page]) 換頁
 
   end
