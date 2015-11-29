@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content="Liren Chen" />
+		<meta property="og:image" content="http://www.chenliren.droppages.com/img/liren2.png" />
+		<meta name="description" content="Liren is a researcher, engineer and maker.  ">
 		<title><%= @page_title || "Andrew's Page" %></title>
 		<!-- 修改標籤上的字眼 -->
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
