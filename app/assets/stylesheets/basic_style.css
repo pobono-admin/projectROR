@@ -23,10 +23,6 @@
 .header_style a {
 	color: #fff;
 }
-.header_style li:hover a,
-.header_style a:hover{
-	color: #FF7070;
-}
 
 .page_title{
 	margin-top: 60px;

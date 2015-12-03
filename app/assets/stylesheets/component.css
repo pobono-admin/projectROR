@@ -38,13 +38,12 @@
 
 .menu {
 	position: absolute;
-	top: 300px;
+	top: 50px;
 	left: 0;
 	width: 300px;
 	height: 100%;
-	background: #1c1d22;
+	background: #fff;
 	overflow-y: scroll;
-
 }
 
 .menu__wrap {
@@ -60,6 +59,7 @@
 	font-size: 16px;
 	top: 0;
 	left: 0;
+	opacity: 0;
 	visibility: hidden;
 	overflow: hidden;
 	overflow-y: scroll;
@@ -74,7 +74,9 @@
 }
 
 .menu__level--current {
+	opacity: 1;
 	visibility: visible;
+	z-index: 30000;
 }
 
 .menu__item {
@@ -238,27 +240,30 @@
 	vertical-align: middle;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: #5c5edc;
+	color: #fff;
 }
+
+.menu__breadcrumbs a:nth-child(1) {
+	color: red;
+}
+
 
 .menu__breadcrumbs a:last-child {
 	pointer-events: none;
 }
 
-.menu__breadcrumbs a:hover {
-	color: #8182e0;
-}
+
 
 .menu__breadcrumbs a:not(:last-child)::after {
 	content: '\e902';
 	font-family: 'feather';
 	display: inline-block;
 	padding: 0 0.5em;
-	color: #33353e;
+	color: #fff;
 }
 
 .menu__breadcrumbs a:not(:last-child):hover::after {
-	color: #33353e;
+	color: #fff;
 }
 
 .menu__back {
