@@ -142,9 +142,7 @@
 	text-indent: 0;
 }
 
-.bp-nav a:hover:after {
-	color: #fff;
-}
+
 
 .bp-icon--next:after {
 	content: '\e000';
@@ -225,23 +223,20 @@
 	color: #47484c;
 }
 
-body #cdawrap {
+ #cdawrap {
 	top: auto;
 	bottom: 15px;
 	background: rgba(0, 0, 0, 0.1);
 }
 
-body #cdawrap .carbon-text {
+ #cdawrap .carbon-text {
 	color: #505158;
 }
 
-body #cdawrap a.carbon-poweredby {
+ #cdawrap a.carbon-poweredby {
 	color: #7883c4;
 }
 
-body #cdawrap a:hover.carbon-poweredby {
-	color: #fff;
-}
 
 @media screen and (max-width: 40em) {
 	.bp-header {
