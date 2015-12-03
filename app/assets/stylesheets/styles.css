@@ -231,7 +231,7 @@ Hero
 /* ==========================================================================
 Intro
 ========================================================================== */
-.intro { background: #f3f5f8; }
+.intro { background: #f3f5f9; }
 .intro p { margin: 50px 0 0; }
 h1.arrow { font-size: 15px; text-transform: uppercase; color: #353535; letter-spacing: 1px; background: url('/img/3.jpg') no-repeat center bottom; padding-bottom: 30px; font-weight: bold; }
 /* ==========================================================================
@@ -312,8 +312,8 @@ Contact
 Footer
 ========================================================================== */
 footer a { color: #a1a9b0; }
-footer { background-color: #242830; padding: 0px;}
-footer p { color: #fff; }
+footer { margin-top:0px; padding: 0px;} /*background-color: #242830*/
+footer p { color: #000; }
 ul.legals { list-style: none; color: #fff; line-height: 25px; }
 ul.legals li { display: inline-block; }
 ul.legals li::after { content: " |"; }

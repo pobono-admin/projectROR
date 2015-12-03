@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'lab/new'
+
   # get 'sessions/new'
   # get 'users/new'
 
@@ -86,6 +88,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+  get    'andrew_lab'   => 'lab#new'
 
 # get 'account_activation', "account_activations#edit", :as => :edit_account_activation
 
