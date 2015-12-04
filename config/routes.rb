@@ -89,6 +89,7 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   get    'andrew_lab'   => 'lab#new'
+  get    'a'   => 'lab#a'
 
 # get 'account_activation', "account_activations#edit", :as => :edit_account_activation
 

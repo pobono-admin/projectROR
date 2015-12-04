@@ -19,7 +19,7 @@
 	</head>
 
 	<body ng-app="validationApp" ng-controller="mainController">
-		<%= render "welcome/navbar" %>
+		<%= render "welcome/navbar" unless @disable_nav %>
 		<!-- Adding Authentication with Devise -->
 		<% if notice %>
 		<p class="alert alert-success"><%= notice %></p>
@@ -36,6 +36,6 @@
 		<% end %>
 		<%= yield %>
 		<!-- 要在yield之後才會置底 -->
-		<%= render "welcome/footer" %>
+		<%= render "welcome/footer" unless @disable_foot %>
 	</body>
 </html>
