@@ -72,8 +72,8 @@
 			</div>
 		</nav>
 		<div class="content">
-			<p>wew</p>
-			<p class="info">Please choose a category</p>
+		<object class="lab_frame" type="text/html" data="../overview.html" ></object>
+			<!-- <p class="info">Please choose a category</p> -->
 			<!-- Ajax loaded content here -->
 		</div>
 	</div>
@@ -115,7 +115,7 @@
 			classie.add(gridWrapper, 'content--loading');
 			setTimeout(function() {
 				classie.remove(gridWrapper, 'content--loading');
-				gridWrapper.innerHTML = '<ul class="products">' + dummyData[itemName] +'<ul>';
+				gridWrapper.innerHTML = dummyData[itemName];
 			}, 700);
 		}
 	})();

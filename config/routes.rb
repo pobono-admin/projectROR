@@ -89,7 +89,8 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   get    'andrew_lab'   => 'lab#new'
-  get    'a'   => 'lab#a'
+  get    'overview'   => 'lab#overview'
+  get    'lab_3Dprinter'   => 'lab#lab_3Dprinter'
 
 # get 'account_activation', "account_activations#edit", :as => :edit_account_activation
 
