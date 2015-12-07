@@ -188,6 +188,7 @@
 	position: relative;
 	min-height: 1000px;
 	margin: 0 0 0 300px;
+	overflow: hidden;
 }
 
 .content--loading {

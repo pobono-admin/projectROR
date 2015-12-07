@@ -1,3 +1,9 @@
+.tree_down::after{
+	content: '\ea36';
+	font-family: 'feather';
+}
+
+
 /* general */
 .clear {
 clear: both;
@@ -13,6 +19,7 @@ font-style 			: italic;
 background-color 	: white;
 margin 				: 10px;
 padding 			: 10px;
+display				: none;
 }
 #show-list{
 cursor 				: pointer;
@@ -31,7 +38,6 @@ padding               : 20px;
 }
 /* Custom node styling */
 .jOrgChart .node {
-font-size 			: 14px;
 background-color 	: #35363B;
 border-radius 		: 8px;
 border 				: 5px solid white;
@@ -40,7 +46,6 @@ color 				: #F38630;
 }
 .node p{
 font-family 	: tahoma;
-font-size 		: 10px;
 line-height 	: 11px;
 padding 		: 2px;
 }
@@ -103,7 +108,6 @@ border: 1px solid red;}
 /* The node */
 .jOrgChart .node {
   background-color 		: #fff;
-  border                : 1px soild red	; 
   display               : inline-block;
   width                 : 96px;
   height                : 60px;

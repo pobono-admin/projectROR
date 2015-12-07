@@ -147,7 +147,8 @@
             // maintain their appearance
             $node.removeClass('collapsed');
           }else{
-            $this.css('cursor','s-resize');
+            $this.css('cursor',''); 
+            // s-resize
             $tr.removeClass('expanded').addClass('contracted');
             $tr.nextAll("tr").css('visibility', 'hidden');
 
