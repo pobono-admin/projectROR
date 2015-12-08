@@ -1,3 +1,53 @@
+.level1{
+	background-image: url('/images/tools.jpg');
+	opacity: 0.2;
+	z-index: -99999;
+	position: absolute;
+	width: 1700px;
+	height: 910px;
+}
+
+/*.level2 p {
+	opacity: 1;
+		position: absolute;
+
+
+	width: 90px;
+	margin-top: 110px;
+	background-image: url('/images/wood.png');
+}*/
+/*
+.level2{
+	z-index: -99999;
+	position: absolute;
+	background: #B6B6B6;
+	width: 1700px;
+	top: 110px;
+	height: 110px;
+}
+
+.level3{
+	z-index: -99999;
+	position: absolute;
+	background: #E05E00;
+	width: 1700px;
+	top: 220px;
+	height: 110px;
+}
+
+.level4{
+	z-index: -99999;
+	position: absolute;
+	background: #000;
+	width: 1700px;
+	top: 330px;
+	height: 110px;
+}
+
+
+*/
+
+
 .tree_down::after{
 	content: '\ea36';
 	font-family: 'feather';
@@ -16,6 +66,7 @@ font-style 			: italic;
 }
 /* list stuff */
 #org{
+position: relative;
 background-color 	: white;
 margin 				: 10px;
 padding 			: 10px;
@@ -34,11 +85,12 @@ position 			: absolute;
 /* Custom chart styling */
 .jOrgChart {
 margin                : 10px;
+margin-left			  : 90px;
 padding               : 20px;
 }
 /* Custom node styling */
 .jOrgChart .node {
-background-color 	: #35363B;
+/*background-color 	: #35363B;*/
 border-radius 		: 8px;
 border 				: 5px solid white;
 color 				: #F38630;
@@ -82,20 +134,21 @@ border: 1px solid red;}
 }
 
 .jOrgChart .down {
-  background-color 		: black;	
+  background-color 		: #644c32;	
   margin 				: 0px auto;
+  border 				: 2px solid #644c32;	
 }
 
 .jOrgChart .top {
-  border-top          : 2px solid black;
+  border-top          : 4px solid #644c32;
 }
 
 .jOrgChart .left {
-  border-right          : 2px solid black;
+  border-right          : 4px solid #644c32;
 }
 
 .jOrgChart .right {
-  border-left           : 2px solid black;
+  border-left           : 4px solid #644c32;
 }
 
 /* node cell */
@@ -107,7 +160,7 @@ border: 1px solid red;}
 
 /* The node */
 .jOrgChart .node {
-  background-color 		: #fff;
+/*  background-color 		: #fff;*/
   display               : inline-block;
   width                 : 96px;
   height                : 60px;
